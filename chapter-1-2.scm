@@ -1,4 +1,4 @@
-;; Excercise 1.9
+;; Exercise 1.9
 ;; Each of the following two procedures defines a method for adding two positive integers in terms
 ;; of procedures `inc`, which increments its arguments by 1, and `dec`, which decrementes its
 ;; argument by 1.
