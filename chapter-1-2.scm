@@ -7,8 +7,8 @@
 
 (define (only-dec-first-add a b)
   (if (= a 0)
-      b
-      (inc (only-dec-first-add (dec a) b))))
+    b
+    (inc (only-dec-first-add (dec a) b))))
 
 (only-dec-a-add 4 5)
 (inc (only-dec-a-add 3 5))
@@ -26,8 +26,8 @@
 
 (define (dec-both-add a b)
   (if (= a 0)
-      b
-      (+ (dec a) (inc b))))
+    b
+    (+ (dec a) (inc b))))
 
 (dec-both-add 4 5)
 (dec-both-add (dec 4) (inc 5))
@@ -43,4 +43,14 @@
 ;; `dec-both-add` procedure produces an iterative process because the top function has all the data
 ;; it needs when called (because `dec` and `inc` are not recursive).
 
+;; Exercise 1.10 Ackermann function
+(define (A x y)
+  (cond ((= y 0) 0)
+    ((= x 0) (* 2 y))
+    ((= y 1) 2)
+    (else (A (- x 1)
+            (A x (- y 1))))))
 
+(define (f n) (A 0 n)) ;; = 2n
+(define (g n) (A 1 n)) ;; = 2n^n
+(define (h n) (A 2 n)) ;; = 2n^n^n
